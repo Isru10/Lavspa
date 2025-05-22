@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
+import Image from "next/image";
 
 // Define the Testimonial type for TypeScript
 interface Testimonial {
@@ -72,7 +73,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
             </p>
             {/* Use mt-auto on the container div for the avatar/name to push it down */}
             <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/10 flex-shrink-0"> {/* Ensure footer doesn't shrink */}
-                <img
+                <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
                     className="w-14 h-14 rounded-full object-cover border-2 border-white/50"
