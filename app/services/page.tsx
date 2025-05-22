@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react"; // Import useCallback
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 // Define an interface for the service object for better type safety
 interface Service {
@@ -166,14 +167,16 @@ const ServicesSection = () => {
                   className="absolute inset-0 bg-white text-gray-800 rounded-2xl shadow-xl overflow-hidden h-full flex flex-col lg:flex-row"
                 >
                   {/* Image Area */}
-                  <div className="w-full lg:w-1/2 h-64 lg:h-auto">
-                     <img
-                     
-                        src={selectedService.image}
-                        alt={selectedService.title}
-                        className="w-full h-full object-cover"
-                     />
-                  </div>
+
+<div className="w-full lg:w-1/2 h-64 lg:h-auto relative">
+  <Image
+    src={selectedService.image}
+    alt={selectedService.title}
+    fill
+    className="object-cover"
+  />
+</div>
+
 
                   {/* Text Content Area */}
                   <div className="w-full lg:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
